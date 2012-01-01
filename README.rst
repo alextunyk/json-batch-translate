@@ -49,7 +49,7 @@ So here is a code that will do this:
     JSONObject jsonObject = new JSONObject(in);
 
     // translate it from English to Spanish
-    JsonBatchTranslate.DEFAULT.execute(API.BingAPI,
+    JsonBatchTranslate.DEFAULT.execute(API.MicrosoftTranslatorAPI,
                                        /*INSERT-YOUR-KEY*/,
                                        jsonObject,
                                        Language.ENGLISH,
@@ -63,7 +63,7 @@ So here is a code that will do this:
 And if you need the JSONObject with translated particular properties only:
 ::
     // translate the value of property 'key' only
-    JsonBatchTranslate.DEFAULT.execute(API.BingAPI,
+    JsonBatchTranslate.DEFAULT.execute(API.MicrosoftTranslatorAPI,
                                        /*INSERT-YOUR-KEY*/,
                                        jsonObject,
                                        Language.ENGLISH,
