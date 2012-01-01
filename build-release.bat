@@ -1,1 +1,1 @@
-mvn clean package javadoc:jar javadoc:test-jar source:jar source:test-jar site:jar release:clean release:prepare release:perform
+mvn -Prelease-sign-artifacts clean package javadoc:jar javadoc:test-jar source:jar source:test-jar site:jar release:clean release:prepare release:perform
