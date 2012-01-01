@@ -1,20 +1,23 @@
 ====================
 JSON Batch Translate
 ====================
+
 :Version: 1.0
 :Keywords: Google Translate, Microsoft Translator, Yandex Translate, Java, JSON, bulk translation
 :Copyright: Alex Tunyk <alex at tunyk.com>
 :License: Apache License version 2.0
 
-\
 JSON Batch Translate library allows you to perform multiple translations within a single call through using JSON object. Exactly the same JSON object will be returned back but with translated values (keys are kept original, only the one request per API invocation is sent for translation). Translation can be based on the one of following services:
-    - Google Translate
-    - Microsoft Translator
-    - Yandex Translate
 
+- Google Translate
+
+- Microsoft Translator
+
+- Yandex Translate
 
 Example Usage:
 """"""""""""""
+
 Let's say you have this JSON object:
 ::
     {
@@ -33,9 +36,9 @@ Let's say you have this JSON object:
             "obj": "otro texto a traducir"
         }
     }
+
 ... and you don't want multiple requests to be sent, but just one request as well as to have the possibility to use
 translation service provided by Google, Microsoft or Yandex.
-
 
 So here is a code that will do this:
 ::
@@ -57,7 +60,6 @@ So here is a code that will do this:
     out.getString("key"); // return translated string: "texto a traducir"
     out.getJSONObject("complex").getString("obj"); // return translated string: "otro texto a traducir"
 
-
 And if you need the JSONObject with translated particular properties only:
 ::
     // translate the value of property 'key' only
@@ -73,15 +75,15 @@ And if you need the JSONObject with translated particular properties only:
     out.getString("key"); // return translated string: "texto a traducir"
     out.getJSONObject("complex").getString("obj"); // return source string: "some other text to be translated"
 
-
-
 You have to get your API key from corresponding service provider to be able to use translation API:
-    - `Google Translate API Key <http://code.google.com/apis/language/translate/v2/getting_started.html>`_
-    - `Bing Developer API Key <http://www.bing.com/developers/createapp.aspx>`_
-    - Yandex.Translate service is not API service. Currently, the Yandex.Translate service is available as a public beta version and provided to the user for personal, non commercial use. More details are `here <http://legal.yandex.ru/translate_termsofuse/>`_ and `here <http://legal.yandex.ru/rules/>`_
 
+- `Google Translate API Key <http://code.google.com/apis/language/translate/v2/getting_started.html>`_
 
-JSON Batch Translate is available as Maven artifact and distributed via the `Maven Central repository <http://search.maven.org/#browse%7C-94393276>`_:
+- `Bing Developer API Key <http://www.bing.com/developers/createapp.aspx>`_
+
+- Yandex.Translate service is not API service. Currently, the Yandex.Translate service is available as a public beta version and provided to the user for personal, non commercial use. More details at `Yandex Translate Terms Of Use <http://legal.yandex.ru/translate_termsofuse/>`_ and `Yandex Rules <http://legal.yandex.ru/rules/>`_
+
+JSON Batch Translate is available as Maven artifact and distributed via the `Maven Central Repository <http://search.maven.org/#browse%7C-94393276>`_:
 ::
     <dependency>
         <groupId>com.tunyk.jsonbatchtranslate</groupId>
@@ -89,17 +91,22 @@ JSON Batch Translate is available as Maven artifact and distributed via the `Mav
         <version>1.1-SNAPSHOT</version>
     </dependency>
 
-
 Source
 """"""
+
 The source code is available on GitHub at https://github.com/TUNYK/json-batch-translate
 ::
     git clone https://github.com/TUNYK/json-batch-translate.git
-NOTE: Since up-to-date version of google-api-translate-java is not in Maven Central, you need to fetch it out from GitHub and install it to your local repository in order to be able to compile json-batch-translate.
-More details about google-api-translate-java at `google-api-translate-java <https://github.com/richmidwinter/google-api-translate-java>`_
 
+NOTE:
+
+* To run Tests you need to update `config.properties <https://github.com/TUNYK/json-batch-translate/blob/master/src/test/resources/config.properties>`_ with your API keys.
+
+* Since up-to-date version of `google-api-translate-java <https://github.com/richmidwinter/google-api-translate-java>`_ is not in Maven Central Repository yet, you need to fetch it out from GitHub and install it to your local repository in order to be able to compile json-batch-translate.
 
 Issues tracking
 """""""""""""""
+
 Issues tracking is available on GitHub at https://github.com/TUNYK/json-batch-translate/issues.
+
 Bug reports, feature requests, and general inquiries welcome.
