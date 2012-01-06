@@ -1,0 +1,39 @@
+{"menu": {
+    "id": "file",
+    "value": "File",
+    "popup": {
+        "menuitem": [
+            {"value": "New", "onclick": "createNewDoc"},
+            {"value": "Open", "onclick": "openDoc"},
+            {"value": "Close", "onclick": "closeDoc"}
+        ],
+		"menuitem2": [
+            {"value": "New", "onclick": "New File"},
+            {"value": "Open", "onclick": "Open File"},
+            {"value": "Close", "onclick": "Close File"}
+        ],
+		"menuitem3": [
+            ["New", "New File"],
+            ["Open", "Open File"],
+            ["Close", "Close File"]
+        ],
+		"menuitem4": [
+            ["New", "New File"],
+            ["Open", "Open File"],
+            ["Close", "Close File"]
+        ],
+		"menuitem5": [
+            ["New", "New File"],
+            ["Open", "Open File"],
+            [
+                ["Close", "Close File"],
+                ["Close it", "Close this File"]
+            ]
+        ],
+		"menuitem6": {
+            "submenuitem" : {
+                "value" : "Delete File"
+            }
+        }
+    }
+}}

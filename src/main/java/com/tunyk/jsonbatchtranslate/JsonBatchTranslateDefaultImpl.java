@@ -175,15 +175,11 @@ public final class JsonBatchTranslateDefaultImpl implements JsonBatchTranslate {
             String namespaceKey = namespace + "." + key;
 
             if (obj instanceof JSONObject) {
-                JSONObject innerJson = iterateJSONObject((JSONObject) obj, namespace + "." + key, namespacesToInclude);
+                JSONObject innerJson = iterateJSONObject((JSONObject) obj, namespaceKey, namespacesToInclude);
                 res.put(key, innerJson);
             } else if (obj instanceof JSONArray) {
-                if (isNamespaceIncluded(namespaceKey, namespacesToInclude)) {
-                    JSONArray innerJson = iterateJSONArray((JSONArray) obj, namespace + "." + key, namespacesToInclude);
-                    res.put(key, innerJson);
-                } else {
-                    res.put(key, obj);
-                }
+                JSONArray innerJson = iterateJSONArray((JSONArray) obj, namespaceKey, namespacesToInclude);
+                res.put(key, innerJson);
             } else if ((obj instanceof String) && isNamespaceIncluded(namespaceKey, namespacesToInclude)) {
                 Long id = getUID();
                 stringMap.put(id, obj.toString());
@@ -203,13 +199,15 @@ public final class JsonBatchTranslateDefaultImpl implements JsonBatchTranslate {
         }
         for (int i = 0; i < json.length(); i++) {
             Object obj = json.get(i);
+            String namespaceKey = namespace + "[]";
+
             if (obj instanceof JSONObject) {
-                JSONObject innerJson = iterateJSONObject((JSONObject) obj, namespace + "." + Integer.toString(i), namespacesToInclude);
+                JSONObject innerJson = iterateJSONObject((JSONObject) obj, namespaceKey, namespacesToInclude);
                 res.put(i, innerJson);
             } else if (obj instanceof JSONArray) {
-                JSONArray innerJson = iterateJSONArray((JSONArray) obj, namespace + "." + Integer.toString(i), namespacesToInclude);
+                JSONArray innerJson = iterateJSONArray((JSONArray) obj, namespaceKey, namespacesToInclude);
                 res.put(i, innerJson);
-            } else if (obj instanceof String) {
+            } else if ((obj instanceof String) && isNamespaceIncluded(namespaceKey, namespacesToInclude)) {
                 Long id = getUID();
                 stringMap.put(id, obj.toString());
                 res.put(i, id);
@@ -285,7 +283,7 @@ public final class JsonBatchTranslateDefaultImpl implements JsonBatchTranslate {
         boolean isIncluded = false;
         for (String namespaceKey : namespacesToInclude) {
             namespaceKey = "." + namespaceKey;
-            if (namespace.equals(namespaceKey) || namespace.startsWith(namespaceKey + ".")) {
+            if (namespace.equals(namespaceKey) || namespace.startsWith(namespaceKey)) {
                 isIncluded = true;
             }
         }
