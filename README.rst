@@ -37,8 +37,7 @@ Let's say you have this JSON object:
         }
     }
 
-... and you don't want multiple requests to be sent, but just one request as well as to have the possibility to use
-translation service provided by Google, Microsoft or Yandex.
+... and you don't want multiple requests to be sent, but just one request as well as to have the possibility to use translation service provided by Google, Microsoft or Yandex.
 
 So here is a code that will do this:
 ::
@@ -83,7 +82,7 @@ You have to get your API key from corresponding service provider to be able to u
 
 - Yandex.Translate service is not API service. Currently, the Yandex.Translate service is available as a public beta version and provided to the user for personal, non commercial use. More details at `Yandex Translate Terms Of Use <http://legal.yandex.ru/translate_termsofuse/>`_ and `Yandex Rules <http://legal.yandex.ru/rules/>`_
 
-JSON Batch Translate is available as Maven artifact and distributed via the `Maven Central Repository <http://search.maven.org/#browse%7C-94393276>`_:
+JSON Batch Translate is available as Maven artifact and distributed via `Maven Central Repository <http://search.maven.org/#browse%7C-94393276>`_ and `Sonatype OSS Snapshot <https://oss.sonatype.org/content/repositories/snapshots/com/tunyk/jsonbatchtranslate/json-batch-translate/>`_:
 ::
     <dependency>
         <groupId>com.tunyk.jsonbatchtranslate</groupId>
@@ -102,7 +101,8 @@ NOTE:
 
 * To run Tests you need to update `config.properties <https://github.com/TUNYK/json-batch-translate/blob/master/src/test/resources/config.properties>`_ with your API keys.
 
-* Since up-to-date version of `google-api-translate-java <https://github.com/richmidwinter/google-api-translate-java>`_ is not in Maven Central Repository yet, you need to fetch it out from GitHub and install it to your local repository in order to be able to compile json-batch-translate.
+* JSON Batch Translate uses `microsoft-translator-java-api <https://github.com/boatmeme/microsoft-translator-java-api>`_ and `google-api-translate-java <https://github.com/richmidwinter/google-api-translate-java>`_. 
+
 
 Issues tracking
 """""""""""""""
