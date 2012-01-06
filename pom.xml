@@ -28,7 +28,7 @@
         <dependency>
             <groupId>com.memetix</groupId>
             <artifactId>microsoft-translator-java-api</artifactId>
-            <version>0.5-SNAPSHOT</version>
+            <version>0.6-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
