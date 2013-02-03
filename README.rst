@@ -3,7 +3,6 @@ JSON Batch Translate
 ====================
 
 [![endorse](http://api.coderwall.com/alextunyk/endorsecount.png)](http://coderwall.com/alextunyk)
-<a href="https://coderwall.com/alextunyk"><img alt="Endorse alextunyk on Coderwall" src="http://api.coderwall.com/alextunyk/endorsecount.png" /></a>
 
 :Version: 1.0
 :Keywords: Google Translate, Microsoft Translator, Yandex Translate, Java, JSON, bulk translation
