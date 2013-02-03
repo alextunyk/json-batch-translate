@@ -1,3 +1,4 @@
+[![endorse](http://api.coderwall.com/alextunyk/endorsecount.png)](http://coderwall.com/alextunyk)
 ====================
 JSON Batch Translate
 ====================
