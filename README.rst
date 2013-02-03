@@ -1,7 +1,9 @@
-[![endorse](http://api.coderwall.com/alextunyk/endorsecount.png)](http://coderwall.com/alextunyk)
 ====================
 JSON Batch Translate
 ====================
+
+[![endorse](http://api.coderwall.com/alextunyk/endorsecount.png)](http://coderwall.com/alextunyk)
+* * *
 
 :Version: 1.0
 :Keywords: Google Translate, Microsoft Translator, Yandex Translate, Java, JSON, bulk translation
